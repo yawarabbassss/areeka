@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Instrument Serif", serif;
+
+  /* Light Pink & White Editorial Palette */
+  --color-base: #ffffff;       /* Pure white */
+  --color-surface: #fdf5f7;    /* Very light pink background */
+  --color-ink: #2b1a20;        /* Deep, readable burgundy/black for text */
+  --color-taupe: #d67c96;      /* Dusty rose / pink accent */
+  --color-line: #f2e1e6;       /* Soft pink border */
+}
+
+@layer base {
+  body {
+    background-color: var(--color-base);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+}
+
+/* Utilities for hiding scrollbar but allowing scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
