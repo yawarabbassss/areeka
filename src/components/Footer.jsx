@@ -60,13 +60,13 @@ const Footer = () => {
         </div>
 
         {/* Bottom Giant Text */}
-        <div className="w-full flex flex-col md:flex-row items-end justify-between border-t border-white/10 pt-8 gap-6">
-          <h1 className="font-serif text-[12vw] md:text-[14vw] leading-none text-white/5 tracking-tighter uppercase pointer-events-none select-none">
-            {areekaData.name.split(' ')[0]}
+        <div className="w-full flex flex-col md:flex-row items-end justify-between border-t border-white/10 pt-8 gap-6 relative z-10">
+          <h1 className="font-serif italic text-[14vw] md:text-[16vw] leading-none text-white opacity-50 tracking-tighter lowercase pointer-events-none select-none">
+            {areekaData.name}
           </h1>
           
           <div className="text-[10px] md:text-xs font-sans tracking-widest text-white/30 whitespace-nowrap pb-4 md:pb-8">
-            DEVELOPED BY <a href="https://yawarabbass.vercel.app" target="_blank" rel="noopener noreferrer" className="text-white hover:text-taupe transition-colors underline underline-offset-4">YAWAR ABBAS</a>
+            DEVELOPED BY <a href="https://yawarabbass.vercel.app" target="_blank" rel="noopener noreferrer" className="text-white hover:text-taupe transition-colors underline underline-offset-4 cursor-hover">YAWAR ABBAS</a>
           </div>
         </div>
         

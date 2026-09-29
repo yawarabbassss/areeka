@@ -53,27 +53,27 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           
           <div className="lg:col-span-5 order-2 lg:order-1 perspective-1000">
-            <div className="about-img overflow-hidden rounded-2xl shadow-xl aspect-[4/5] relative">
-              <img src={areekaData.aboutImage} alt="About Areeka" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 border border-ink/10 rounded-2xl"></div>
+            <div className="about-img overflow-hidden rounded-t-[10rem] rounded-b-3xl shadow-xl aspect-[4/5] relative">
+              <img src={areekaData.aboutImage} alt="About Areeka" className="editorial-img w-full h-full object-cover" />
+              <div className="absolute inset-0 border border-ink/10 rounded-t-[10rem] rounded-b-3xl pointer-events-none"></div>
             </div>
           </div>
 
           {/* Right: Content */}
           <div className="lg:col-span-7 order-1 lg:order-2 flex flex-col justify-center" style={{ perspective: '1000px' }}>
-            <div className="about-reveal text-xs font-sans tracking-[0.4em] uppercase text-taupe mb-8 flex items-center gap-4">
+            <div className="about-reveal text-[10px] font-sans tracking-[0.6em] uppercase text-taupe mb-8 flex items-center gap-4">
               <span className="w-12 h-[1px] bg-taupe"></span>
               The Story
             </div>
             
-            <h2 className="about-reveal font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] text-ink mb-10">
+            <h2 className="about-reveal font-serif italic text-4xl md:text-6xl lg:text-7xl leading-[1.1] text-ink mb-12 lowercase">
               {bioParagraphs[0]}
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-              <div className="about-reveal text-ink opacity-80 text-sm md:text-base leading-relaxed font-sans font-normal">
+              <div className="about-reveal text-ink opacity-70 text-xs md:text-sm leading-loose font-sans font-light tracking-wide">
                 {bioParagraphs[1] && <p>{bioParagraphs[1]}</p>}
-                {bioParagraphs[2] && <p className="mt-4">{bioParagraphs[2]}</p>}
+                {bioParagraphs[2] && <p className="mt-6">{bioParagraphs[2]}</p>}
               </div>
               
               <div className="about-reveal flex flex-col gap-6 text-xs font-sans tracking-widest text-ink/60 uppercase">

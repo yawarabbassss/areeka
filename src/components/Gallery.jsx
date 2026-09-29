@@ -69,7 +69,7 @@ const Gallery = () => {
               className={`w-full md:w-5/12 gallery-img-container overflow-hidden shadow-2xl border border-line ${index % 2 !== 0 ? 'md:mt-32' : ''}`} 
               style={{ aspectRatio: '4/5' }}
             >
-              <img src={imgSrc} alt={`Gallery ${index}`} className="w-full h-full object-cover" />
+              <img src={imgSrc} alt={`Gallery ${index}`} className="editorial-img w-full h-full object-cover" />
             </div>
           ))}
 

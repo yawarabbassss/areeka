@@ -1,15 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", sans-serif;
-  --font-serif: "Instrument Serif", serif;
-
-  /* Light Pink & White Editorial Palette */
-  --color-base: #ffffff;       /* Pure white */
-  --color-surface: #fdf5f7;    /* Very light pink background */
-  --color-ink: #2b1a20;        /* Deep, readable burgundy/black for text */
-  --color-taupe: #d67c96;      /* Dusty rose / pink accent */
-  --color-line: #f2e1e6;       /* Soft pink border */
+  --color-base: #f7f7f3;       /* Bone/Cream white */
+  --color-surface: #efece5;    /* Slightly darker beige/bone for contrast */
+  --color-ink: #1a1715;        /* Deep espresso brown/charcoal */
+  --color-taupe: #a89f91;      /* Elegant warm grey/taupe */
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Instrument Serif', serif;
 }
 
 @layer base {
@@ -17,14 +14,97 @@
     background-color: var(--color-base);
     color: var(--color-ink);
     font-family: var(--font-sans);
+    cursor: none; /* Hide default cursor for custom cursor */
+    overflow-x: hidden;
+  }
+
+  /* Reset link cursors */
+  a, button, [role="button"] {
+    cursor: none;
   }
 }
 
-/* Utilities for hiding scrollbar but allowing scroll */
+/* Custom Cursor */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-ink);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, mix-blend-mode 0.3s ease;
+  will-change: transform, width, height;
+}
+
+.custom-cursor.hovering {
+  width: 60px;
+  height: 60px;
+  background-color: transparent;
+  border: 1px solid var(--color-ink);
+  mix-blend-mode: difference;
+  backdrop-filter: blur(2px);
+}
+
+.custom-cursor.hovering-image {
+  width: 80px;
+  height: 80px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--color-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  mix-blend-mode: normal;
+  border: none;
+}
+.custom-cursor.hovering-image::after {
+  content: 'VIEW';
+}
+
+/* Animated Film Grain */
+.film-grain {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  z-index: 9998;
+  animation: grain 8s steps(10) infinite;
+}
+
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -10%); }
+  20% { transform: translate(-15%, 5%); }
+  30% { transform: translate(7%, -25%); }
+  40% { transform: translate(-5%, 25%); }
+  50% { transform: translate(-15%, 10%); }
+  60% { transform: translate(15%, 0%); }
+  70% { transform: translate(0%, 15%); }
+  80% { transform: translate(3%, 35%); }
+  90% { transform: translate(-10%, 10%); }
+}
+
+/* Image Filter for Editorial Vibe */
+.editorial-img {
+  filter: contrast(1.05) saturate(0.9) sepia(0.05);
+}
+
+/* Utility to hide scrollbar for horizontal sections */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 .no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
